@@ -5,20 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="luchadores">
-        <div class="lluitador" id="luchador1" onclick="selectPersonaje('luchador1')"><img class="foto" src="img/axew.jpg"></div>
-        <div class="lluitador" id="luchador2" onclick="selectPersonaje('luchador2')"><img class="foto" src="img/bulbasaur.png"></div>
-        <div class="lluitador" id="luchador3" onclick="selectPersonaje('luchador3')"><img class="foto" src="img/mincinno.jpg"></div>
-        <div class="lluitador" id="luchador4" onclick="selectPersonaje('luchador4')"><img class="foto" src="img/picachu.jpg"></div>
-        <div class="lluitador" id="luchador5" onclick="selectPersonaje('luchador5')"><img class="foto" src="img/squirtle.jpg"></div>
-        <div class="lluitador" id="luchador6" onclick="selectPersonaje('luchador6')"><img class="foto" src="img/tododile.jpg"></div>
+
+    <div class="container-fluid">
+
+        <div class="row mt-4">
+            <div class="col-lg-2">
+                <select class="form-select cantidadJugadores">
+                    <option selected value="0">Seleccione cantidad de jugadores</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mt-4 listaJugadores">
+            <div class="col-lg-2">
+                <div class="card jugador" id="luchador1">
+                    <center>
+                        <img width="200" class="img-fluid img-responsive" src="img/axew.jpg">
+                    </center>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="card jugador" id="luchador2">
+                    <center>
+                        <img width="200" class="img-fluid img-responsive" src="img/bulbasaur.png">
+                    </center>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="card jugador" id="luchador3">
+                   <center>
+                        <img width="200" class="img-fluid img-responsive" src="img/mincinno.jpg">
+                   </center>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="card jugador" id="luchador4">
+                    <center>
+                        <img width="157" class="img-fluid img-responsive" src="img/picachu.jpg">
+                    </center>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="card jugador" id="luchador5">
+                    <center>
+                        <img width="200" class="img-fluid img-responsive" src="img/squirtle.jpg">
+                    </center>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="card jugador" id="luchador6">
+                    <center>
+                        <img width="133" class="img-fluid img-responsive" src="img/tododile.jpg">
+                    </center>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="modalPelea" tabindex="-1" aria-labelledby="modalPeleaLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalPeleaLabel">Emparejamientos</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary">Ir a la pelea</button>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

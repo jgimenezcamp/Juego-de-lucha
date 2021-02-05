@@ -1,29 +1,62 @@
-let selectPersonaje = (fighter) => {
-    if (arrayTeamA.length < 3) {
-        //Introducimos luchador en el array A
-        arrayTeamA.push(fighter);
-        document.getElementById(fighter).className = "elegido";
-        document.getElementById(fighter).onclick = "";
-
-        if (arrayTeamA.length == 3) {
-            //Eliminamos a los personajes ya escogidos.
-            for (let i = 0; i < arrayTeamA.length; i++) {
-                document.getElementById(arrayTeamA[i]).style = "visibility : hidden";
-            };
-        };
+let cantidadJugadores = $('.cantidadJugadores').val();
 
 
-    } else if (arrayTeamB.length < 3) {
-        //Introducimos luchador en el array B
-        arrayTeamB.push(fighter);
-        document.getElementById(fighter).className = "elegido";
-        document.getElementById(fighter).onclick = "";
-    };
 
-    console.log("El EQUIPO A: ", arrayTeamA);
-    console.log("EL EQUIPO B: ", arrayTeamB);
-};
+$(document).ready(function() {
+    $('.cantidadJugadores').change(function() {
 
-let arrayTeamA = [];
+        cantidadJugadores = $(this).val();
 
-let arrayTeamB = [];
+        if (cantidadJugadores == 0) {
+            alert("Debe seleccionar la cantidad de jugadores");
+        } else {
+            alert("Has seleccionado " + cantidadJugadores + " jugadores");
+
+            let arrayTeamA = [];
+            let arrayTeamB = [];
+
+            let countClick = 0;
+
+            $('.jugador').click(function() {
+                let id = $(this).attr('id');
+
+                countClick++;
+
+                if (countClick % 2 != 0) {
+                    $(this).addClass('border border-primary elegido');
+                    arrayTeamA.push(id);
+                } else {
+                    $(this).addClass('border border-danger elegido');
+                    arrayTeamB.push(id);
+                }
+
+                if (countClick == cantidadJugadores) {
+                    $(".jugador").each(function(index) {
+                        if (!$(this).is('.elegido')) {
+                            $(this).hide();
+                        }
+                    });
+
+                }
+
+                let texto = "";
+
+                if (arrayTeamA.length == arrayTeamB.length && countClick == cantidadJugadores) {
+
+                    for (let i = 0; i < arrayTeamA.length; i++) {
+                        texto += "El jugador " + arrayTeamA[i] + " va pelear con " + arrayTeamB[i] + "<br>";
+                    }
+
+                    $('#modalPelea .modal-body').html(texto);
+                    $('#modalPelea').modal('show');
+
+                }
+
+
+            });
+
+
+        }
+
+    });
+});
