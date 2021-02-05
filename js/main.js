@@ -9,63 +9,76 @@ class Luchador {
         this.suerte = suerte;
         this.handicap = suerte - Math.floor(Math.random() * 5);
     };
+    ataque(enemigo) {
+        enemigo.vida -= (this.fuerza - enemigo.defensa) * (this.suerte - this.handicap);
+    };
+
+    ataqueEspecial(enemigo) {
+        enemigo.vida -= (this.fuerza * 0.5 + this.fuerza) - enemigo.defensa;
+    };
+
+    defensa() {
+
+    };
+};
 
 
-    $(document).ready(function() {
-        $('.cantidadJugadores').change(function() {
 
-            cantidadJugadores = $(this).val();
+$(document).ready(function() {
+    $('.cantidadJugadores').change(function() {
 
-            if (cantidadJugadores == 0) {
-                alert("Debe seleccionar la cantidad de jugadores");
-            } else {
-                alert("Has seleccionado " + cantidadJugadores + " jugadores");
+        cantidadJugadores = $(this).val();
 
-                let arrayTeamA = [];
-                let arrayTeamB = [];
+        if (cantidadJugadores == 0) {
+            alert("Debe seleccionar la cantidad de jugadores");
+        } else {
+            alert("Has seleccionado " + cantidadJugadores + " jugadores");
 
-                let countClick = 0;
+            let arrayTeamA = [];
+            let arrayTeamB = [];
 
-                $('.jugador').click(function() {
-                    let id = $(this).attr('id');
+            let countClick = 0;
 
-                    countClick++;
+            $('.jugador').click(function() {
+                let id = $(this).attr('id');
 
-                    if (countClick % 2 != 0) {
-                        $(this).addClass('border border-primary elegido');
-                        arrayTeamA.push(id);
-                    } else {
-                        $(this).addClass('border border-danger elegido');
-                        arrayTeamB.push(id);
-                    }
+                countClick++;
 
-                    if (countClick == cantidadJugadores) {
-                        $(".jugador").each(function(index) {
-                            if (!$(this).is('.elegido')) {
-                                $(this).hide();
-                            }
-                        });
+                if (countClick % 2 != 0) {
+                    $(this).addClass('border border-primary elegido');
+                    arrayTeamA.push(id);
+                } else {
+                    $(this).addClass('border border-danger elegido');
+                    arrayTeamB.push(id);
+                }
 
-                    }
-
-                    let texto = "";
-
-                    if (arrayTeamA.length == arrayTeamB.length && countClick == cantidadJugadores) {
-
-                        for (let i = 0; i < arrayTeamA.length; i++) {
-                            texto += "El jugador " + arrayTeamA[i] + " va pelear con " + arrayTeamB[i] + "<br>";
+                if (countClick == cantidadJugadores) {
+                    $(".jugador").each(function(index) {
+                        if (!$(this).is('.elegido')) {
+                            $(this).hide();
                         }
+                    });
 
-                        $('#modalPelea .modal-body').html(texto);
-                        $('#modalPelea').modal('show');
+                }
 
+                let texto = "";
+
+                if (arrayTeamA.length == arrayTeamB.length && countClick == cantidadJugadores) {
+
+                    for (let i = 0; i < arrayTeamA.length; i++) {
+                        texto += "El jugador " + arrayTeamA[i] + " va pelear con " + arrayTeamB[i] + "<br>";
                     }
 
+                    $('#modalPelea .modal-body').html(texto);
+                    $('#modalPelea').modal('show');
 
-                });
+                }
 
 
-            }
+            });
 
-        });
+
+        }
+
     });
+});
