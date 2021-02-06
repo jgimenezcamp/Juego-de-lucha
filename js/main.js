@@ -1,7 +1,7 @@
 let cantidadJugadores = $('.cantidadJugadores').val();
 class Luchador {
 
-    constructor(nombre, vida, fuerza, defensa, suerte) {
+    constructor(nombre, vida, fuerza, defensa, suerte, prueba) {
         this.nombre = nombre;
         this.vida = vida;
         this.fuerza = fuerza;
@@ -14,10 +14,10 @@ class Luchador {
     };
 
     ataqueEspecial(enemigo) {
-        enemigo.vida -= (this.fuerza * 0.5 + this.fuerza) - enemigo.defensa;
+        enemigo.vida -= (this.fuerza * 0.5 + this.fuerza) - enemigo.defensa + enemigo * prueba;
     };
 
-    defensa() {
+    defensa(prueba) {
 
     };
 };
