@@ -17,7 +17,7 @@ class Luchador {
         enemigo.vida -= (this.fuerza * 0.5 + this.fuerza) - enemigo.defensa;
     };
 
-    defensa() {
+    defensa(g) {
 
     };
 };
