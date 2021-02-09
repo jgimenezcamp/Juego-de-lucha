@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -25,72 +26,72 @@
 
         <div class="row mt-4 listaJugadores">
             <div class="col-lg-2">
-                <div class="card jugador" id="luchador1" data-name="">
+                <div class="card jugador" onclick="clickJugador('nombreJugador1')" id="luchador1" data-name="">
                     <center>
                         <img width="200" class="img-fluid img-responsive" src="img/axew.jpg">
                     </center>
                     <div class="card-body">
-                        <h5 class="card-title"></h5>
+                        <h5 class="card-title" id="nombreJugador1"></h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-2">
-                <div class="card jugador" id="luchador2" data-name="">
+                <div class="card jugador" onclick="clickJugador('nombreJugador2')" id="luchador2" data-name="">
                     <center>
                         <img width="200" class="img-fluid img-responsive" src="img/bulbasaur.png">
                     </center>
                     <div class="card-body">
-                        <h5 class="card-title"></h5>
+                        <h5 class="card-title" id="nombreJugador2"></h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-2">
-                <div class="card jugador" id="luchador3" data-name="">
+                <div class="card jugador" onclick="clickJugador('nombreJugador3')" id="luchador3" data-name="">
                     <center>
                         <img width="200" class="img-fluid img-responsive" src="img/mincinno.jpg">
                     </center>
                     <div class="card-body">
-                        <h5 class="card-title"></h5>
+                        <h5 class="card-title"  id="nombreJugador3"></h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-2">
-                <div class="card jugador" id="luchador4" data-name="">
+                <div class="card jugador" onclick="clickJugador('nombreJugador4')" id="luchador4" data-name="">
                     <center>
                         <img width="157" class="img-fluid img-responsive" src="img/picachu.jpg">
                     </center>
                     <div class="card-body">
-                        <h5 class="card-title"></h5>
+                        <h5 class="card-title"  id="nombreJugador4"></h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-2">
-                <div class="card jugador" id="luchador5" data-name="">
+                <div class="card jugador" onclick="clickJugador('nombreJugador5')" id="luchador5" data-name="">
                     <center>
                         <img width="200" class="img-fluid img-responsive" src="img/squirtle.jpg">
                     </center>
                     <div class="card-body">
-                        <h5 class="card-title"></h5>
+                        <h5 class="card-title"  id="nombreJugador5"></h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-2">
-                <div class="card jugador" id="luchador6" data-name="">
+                <div class="card jugador" onclick="clickJugador('nombreJugador6')" id="luchador6" data-name="">
                     <center>
                         <img width="133" class="img-fluid img-responsive" src="img/tododile.jpg">
                     </center>
                     <div class="card-body">
-                        <h5 class="card-title"></h5>
+                        <h5 class="card-title"  id="nombreJugador6"></h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
                     </div>
@@ -98,10 +99,10 @@
             </div>
         </div>
 
-        <div class="row mt-5 container-pelea visually-hidden">
+        <div id="container-pelea" class="row mt-5 container-pelea ocultar">
             <div class="col-lg-5"></div>
             <div class="col-lg-2">
-                <button class="btn btn-outline-danger w-100 btn-block btn-pelear">Pelear</button>
+                <button onclick="pelear()" class="btn btn-outline-danger w-100 btn-block btn-pelear">Pelear</button>
             </div>
             <div class="col-lg-5"></div>
         </div>
